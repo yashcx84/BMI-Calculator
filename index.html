@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="utill.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main>
+        <div class="headSec">
+            <h1>BMI<span style="color: rgb(240, 185, 104);">CALC</span></h1>
+        </div>
+        <div class="mainSec">
+            <input type="text" id="weight" placeholder="Weight--Kg">
+            <input type="text" id="height" placeholder="Height--Feet">
+            <div class="BMIresult">
+                <h1 id="result"></h1>
+            </div>
+            <div class="btnBox"> 
+                <button id="calculateButton">CHECKOUT</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        @2023 Incx84.
+    </footer>
+  <script>
+        // fetching elements--
+        var weightInput = document.getElementById("weight");
+        var heightInput = document.getElementById("height");
+        var calculateButton = document.getElementById("calculateButton");
+        var resultShowcase = document.getElementById("result");
+
+        // event listener for btn clicking--
+        calculateButton.addEventListener("click", bmiCal);
+
+        // event listener for the "keydown" event on weight and height inputs
+        weightInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                bmiCal();
+            }
+        });
+
+        heightInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                bmiCal();
+            }
+        });
+
+        // Function to calculate BMI
+        function bmiCal() {
+            var weight = weightInput.value;
+            var height = heightInput.value;
+
+            if (!isNaN(weight) && !isNaN(height)) {
+                var bmi = Math.round(weight / Math.pow((height * 0.304), 2));
+                // alert("BMI: " + bmi.toFixed(2));
+                resultShowcase.innerHTML = "ESTIMATED " + bmi;
+
+            } else {
+                alert("INPUT FIRST");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+
+<body>
+    <main>
+        <div class="head">
+            <h1>BMI CALC</h1>
+        </div>
+        <div class="main">
+            Weight <input type="number" id="weight" placeholder="Input in Kg">
+            Height <input type="number" id="height" placeholder="Input in Feet">
+        </div>
+        <div class="boat">
+            <button  onclick="bmiCal()">CHECKOUT</button>
+        </div>
+        <div class="BMIresult">
+            <h1 id="result"></h1>
+        </div>
+    </main>
+    <footer>
+        @2023 cx84.
+    </footer>
+</body>
+<script>
+    // var checkbtn = document.getElementsByTagName("button");
+    
+    function bmiCal() {
+        var weight = document.getElementById("weight");
+        var height = document.getElementById("height");
+        // Fetching the values of height and weight individually--
+        var heightVal = height.value;
+        var weightVal = weight.value;
+        var resultShowcase = document.getElementById("result");
+        // evaluating the result-- based on the input value--
+        var result = Math.round(weightVal / Math.pow((heightVal * 0.3048), 2));
+        if (!isNaN(weightVal) && !isNaN(heightVal)) {
+            // if input is not given by the user--
+            resultShowcase.innerHTML = "ESTIMATED : " + result;
+    
+        }
+        else {
+            resultShowcase.innerHTML = "--INPUT FIRST--";
+        }
+    }
+</script>
+
+</html> -->
